@@ -5,12 +5,13 @@
  */
 package com.example.plugin
 
-import net.mamoe.mirai.Bot
 import net.mamoe.mirai.console.plugins.PluginBase
-import net.mamoe.mirai.event.*
 import net.mamoe.mirai.event.events.NewFriendRequestEvent
-import net.mamoe.mirai.event.MessageSubscribersBuilder
+import net.mamoe.mirai.event.subscribeAlways
+import net.mamoe.mirai.message.FriendMessageEvent
+import net.mamoe.mirai.message.GroupMessageEvent
 import net.mamoe.mirai.message.MessageEvent
+import net.mamoe.mirai.message.TempMessageEvent
 
 object ExamplePluginMain : PluginBase() {
 
@@ -19,27 +20,22 @@ object ExamplePluginMain : PluginBase() {
         //插件已加载
         logger.info("Plugin loaded!")
 
-        //在这处理信息
-        subscribeMessages {
-            //接收全部人信息
-            "如果接收的信息是这个" reply{"返回这个"}
-            "签到" reply {"Hi ${sender.nick}\n 我们还在维修呢"}
-            "复读" reply {"$message"}
+        subscribeAlways<MessageEvent> {
+            //全部信息
         }
-        subscribeGroupMessages {
-            //处理群消息
-            "Hi" reply {"hi ${sender.nick}"}
+        subscribeAlways<GroupMessageEvent> {
+            //群信息
         }
-        subscribeFriendMessages {
-            //处理个人信息
-            "你好" reply { "hi" }
-            "机器人" reply{ "h" }
+        subscribeAlways<FriendMessageEvent> {
+            //个人信息
+            reply("信息")
         }
-        subscribeTempMessages {
-            //处理临时信息
+        subscribeAlways<TempMessageEvent> {
+            //临时信息
         }
         subscribeAlways<NewFriendRequestEvent> {
             //自动同意加好友
+
             this.accept()
         }
 
