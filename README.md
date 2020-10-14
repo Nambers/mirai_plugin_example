@@ -3,4 +3,7 @@
 
 a simple example of mirai using kotlin
 一个简易的mirai框架应用 用kotlin语言
+
 c++版 https://github.com/Nambers/MiraiCP
+
+可直接用idea打开文件夹来打开项目
