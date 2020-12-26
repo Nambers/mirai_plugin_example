@@ -9,6 +9,6 @@ mirai_kotlin_example - 新版框架
 
 kotlin_mirai - 旧版框架
 
-c++版 https://github.com/Nambers/MiraiCP
+c++版(暂不维护) https://github.com/Nambers/MiraiCP
 
 可直接用idea打开文件夹来打开项目
