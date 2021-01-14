@@ -10,6 +10,7 @@ import net.mamoe.mirai.event.events.NewFriendRequestEvent
 import net.mamoe.mirai.event.globalEventChannel
 import net.mamoe.mirai.utils.info
 import net.mamoe.mirai.message.data.Image
+import net.mamoe.mirai.message.data.Image.Key.queryUrl
 import net.mamoe.mirai.message.data.PlainText
 import kotlin.coroutines.EmptyCoroutineContext
 
@@ -29,11 +30,7 @@ object PluginMain : KotlinPlugin(
         logger.info { "Plugin loaded" }
         //配置文件目录 "${dataFolder.absolutePath}/"
 
-        globalEventChannel().subscribeAlways(
-            GroupMessageEvent::class,
-            EmptyCoroutineContext,
-            Listener.ConcurrencyKind.CONCURRENT
-        ) {
+        globalEventChannel().subscribeAlways<GroupMessageEvent>{
             //群消息
             if (message.contentToString().startsWith("复读")) {
                 group.sendMessage(message.contentToString().replace("复读", ""))
@@ -45,32 +42,21 @@ object PluginMain : KotlinPlugin(
                 //循环每个元素在消息里
                 if (it is Image) {
                     //如果消息这一部分是图片
+                    val url = it.queryUrl()
                 }
                 if (it is PlainText) {
                     //如果消息这一部分是纯文本
                 }
             }
         }
-        globalEventChannel().subscribeAlways(
-            FriendMessageEvent::class,
-            EmptyCoroutineContext,
-            Listener.ConcurrencyKind.CONCURRENT
-        ) {
+        globalEventChannel().subscribeAlways<FriendMessageEvent>{
             //好友信息
         }
-        globalEventChannel().subscribeAlways(
-            NewFriendRequestEvent::class,
-            EmptyCoroutineContext,
-            Listener.ConcurrencyKind.CONCURRENT
-        ) {
+        globalEventChannel().subscribeAlways<NewFriendRequestEvent>{
             //自动同意好友申请
             accept()
         }
-        globalEventChannel().subscribeAlways(
-            BotInvitedJoinGroupRequestEvent::class,
-            EmptyCoroutineContext,
-            Listener.ConcurrencyKind.CONCURRENT
-        ) {
+        globalEventChannel().subscribeAlways<BotInvitedJoinGroupRequestEvent>{
             //自动同意加群申请
             accept()
         }
