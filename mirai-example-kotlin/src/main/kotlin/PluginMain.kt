@@ -15,9 +15,9 @@ import net.mamoe.mirai.message.data.PlainText
 import kotlin.coroutines.EmptyCoroutineContext
 
 /*
-ÔÚsrc/main/resources/plugin.ymlÀï¸Ä²å¼şĞÅÏ¢ºÍÈë¿Úµã
-ÔÚsettings.gradle.ktsÀï¸ÄÉú³ÉµÄ²å¼ş.jarÃû³Æ
-ÓÃrunmiraiktÕâ¸öÅäÖÃ¿ÉÒÔÔÚideÀïÔËĞĞ£¬²»ÓÃ¸´ÖÆµ½mcl»òÆäËûÆô¶¯Æ÷
+åœ¨src/main/resources/plugin.ymlé‡Œæ”¹æ’ä»¶ä¿¡æ¯å’Œå…¥å£ç‚¹
+åœ¨settings.gradle.ktsé‡Œæ”¹ç”Ÿæˆçš„æ’ä»¶.jaråç§°
+ç”¨runmiraiktè¿™ä¸ªé…ç½®å¯ä»¥åœ¨ideé‡Œè¿è¡Œï¼Œä¸ç”¨å¤åˆ¶åˆ°mclæˆ–å…¶ä»–å¯åŠ¨å™¨
  */
 
 object PluginMain : KotlinPlugin(
@@ -28,36 +28,46 @@ object PluginMain : KotlinPlugin(
 ) {
     override fun onEnable() {
         logger.info { "Plugin loaded" }
-        //ÅäÖÃÎÄ¼şÄ¿Â¼ "${dataFolder.absolutePath}/"
+        //é…ç½®æ–‡ä»¶ç›®å½• "${dataFolder.absolutePath}/"
 
         globalEventChannel().subscribeAlways<GroupMessageEvent>{
-            //ÈºÏûÏ¢
-            if (message.contentToString().startsWith("¸´¶Á")) {
-                group.sendMessage(message.contentToString().replace("¸´¶Á", ""))
+            //ç¾¤æ¶ˆæ¯
+            //å¤è¯»ç¤ºä¾‹
+            if (message.contentToString().startsWith("å¤è¯»")) {
+                group.sendMessage(message.contentToString().replace("å¤è¯»", ""))
             }
             if (message.contentToString() == "hi") {
+                //ç¾¤å†…å‘é€
                 group.sendMessage("hi")
+                //å‘å‘é€è€…ç§èŠå‘é€æ¶ˆæ¯
+                sender.sendMessage("hi")
+                //ä¸ç»§ç»­å¤„ç†
+                return@subscribeAlways
             }
+            //åˆ†ç±»ç¤ºä¾‹
             message.forEach {
-                //Ñ­»·Ã¿¸öÔªËØÔÚÏûÏ¢Àï
+                //å¾ªç¯æ¯ä¸ªå…ƒç´ åœ¨æ¶ˆæ¯é‡Œ
                 if (it is Image) {
-                    //Èç¹ûÏûÏ¢ÕâÒ»²¿·ÖÊÇÍ¼Æ¬
+                    //å¦‚æœæ¶ˆæ¯è¿™ä¸€éƒ¨åˆ†æ˜¯å›¾ç‰‡
                     val url = it.queryUrl()
+                    group.sendMessage("å›¾ç‰‡ï¼Œä¸‹è½½åœ°å€$url")
                 }
                 if (it is PlainText) {
-                    //Èç¹ûÏûÏ¢ÕâÒ»²¿·ÖÊÇ´¿ÎÄ±¾
+                    //å¦‚æœæ¶ˆæ¯è¿™ä¸€éƒ¨åˆ†æ˜¯çº¯æ–‡æœ¬
+                    group.sendMessage("çº¯æ–‡æœ¬ï¼Œå†…å®¹:${it.content}")
                 }
             }
         }
         globalEventChannel().subscribeAlways<FriendMessageEvent>{
-            //ºÃÓÑĞÅÏ¢
+            //å¥½å‹ä¿¡æ¯
+            sender.sendMessage("hi")
         }
         globalEventChannel().subscribeAlways<NewFriendRequestEvent>{
-            //×Ô¶¯Í¬ÒâºÃÓÑÉêÇë
+            //è‡ªåŠ¨åŒæ„å¥½å‹ç”³è¯·
             accept()
         }
         globalEventChannel().subscribeAlways<BotInvitedJoinGroupRequestEvent>{
-            //×Ô¶¯Í¬Òâ¼ÓÈºÉêÇë
+            //è‡ªåŠ¨åŒæ„åŠ ç¾¤ç”³è¯·
             accept()
         }
     }

@@ -19,5 +19,7 @@ repositories {
     maven("https://dl.bintray.com/kotlin/kotlin-eap")
 }
 dependencies{
+    //在IDE内运行的mcl添加滑块模块，参考https://github.com/project-mirai/mirai-login-solver-selenium
+    //runtimeOnly("net.mamoe:mirai-login-solver-selenium:1.0-dev-15")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.21")
 }
