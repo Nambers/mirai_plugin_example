@@ -23,6 +23,7 @@ import kotlin.coroutines.EmptyCoroutineContext
 object PluginMain : KotlinPlugin(
     JvmPluginDescription(
         id = "org.example.mirai-example",
+        name = "插件示例",
         version = "0.1.0"
     )
 ) {
