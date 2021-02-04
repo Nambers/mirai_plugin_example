@@ -5,6 +5,12 @@ a simple example of mirai using kotlin
 
 一个简易的mirai(mirai-console)框架应用 用kotlin语言
 
+# 使用方法
+
+## 1. clone或下载本项目全部东西，可以不用下release
+
+## 2.更改到最新版
+
 依赖版本地址需自己按照[这里的最新版更改](https://bintray.com/him188moe/mirai/mirai-console/)或[这里](https://github.com/mamoe/mirai-console/blob/master/docs/ConfiguringProjects.md)，更改地址:build.gradle.kts下
 
 ![更改地址](https://img-blog.csdnimg.cn/20210120155108568.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwODMyOTYw,size_16,color_FFFFFF,t_70)
