@@ -3,13 +3,13 @@
 
 a simple example of mirai using kotlin
 
-一个简易的mirai(mirai-console)框架应用 用kotlin语言
+一个简易的mirai(mirai-console)框架应用 包含kotlin或java版(在 `/src/main/java` 或 `/src/main/kotlin`目录下)
 
 # 使用方法
 
 ## 1. clone或下载本项目全部东西，可以不用下release
 
-## 2.更改到最新版
+## 2.更改gradle依赖到最新版
 
 依赖版本地址需自己按照[这里的最新版更改](https://bintray.com/him188moe/mirai/mirai-console/)或[这里](https://github.com/mamoe/mirai-console/blob/master/docs/ConfiguringProjects.md)，更改地址:build.gradle.kts下
 

@@ -12,11 +12,16 @@ import net.mamoe.mirai.utils.info
 import net.mamoe.mirai.message.data.Image
 import net.mamoe.mirai.message.data.Image.Key.queryUrl
 import net.mamoe.mirai.message.data.PlainText
-import kotlin.coroutines.EmptyCoroutineContext
 
 /*
-在src/main/resources/plugin.yml里改插件信息和入口点
+使用kotlin版请把
+src/main/resources/META-INF.services/net.mamoe.mirai.console.plugin.jvm.JvmPlugin
+文件内容改成"org.example.mirai.plugin.PluginMain"也就是当前主类
+使用kt可以把java文件夹删除不会对项目有影响
+
 在settings.gradle.kts里改生成的插件.jar名称
+build.gradle.kts里改依赖库和插件版本
+在主类下的JvmPluginDescription改插件名称，id和版本
 用runmiraikt这个配置可以在ide里运行，不用复制到mcl或其他启动器
  */
 
