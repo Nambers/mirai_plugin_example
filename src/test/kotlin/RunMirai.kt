@@ -12,7 +12,7 @@ suspend fun main() {
     PluginMain.load()
     PluginMain.enable()
 
-    val bot = MiraiConsole.addBot(692928873, "air12345") {
+    val bot = MiraiConsole.addBot(qqNum, "password") {
         fileBasedDeviceInfo()
     }.alsoLogin()
 
