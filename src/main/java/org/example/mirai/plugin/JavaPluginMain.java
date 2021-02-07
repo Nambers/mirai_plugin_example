@@ -34,6 +34,7 @@ public final class JavaPluginMain extends JavaPlugin {
         GlobalEventChannel.INSTANCE.subscribeAlways(GroupMessageEvent.class, g -> {
             //监听群消息
             getLogger().info(g.getMessage().contentToString());
+
         });
         GlobalEventChannel.INSTANCE.subscribeAlways(FriendMessageEvent.class, f -> {
             //监听好友消息
