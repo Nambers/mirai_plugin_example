@@ -1,7 +1,7 @@
-# mirai_kotlin_example
+# mirai_plugin_example
 ![Github](https://img.shields.io/badge/Author-Nambers-blue) ![GitHub](https://img.shields.io/github/license/Nambers/mirai_kotlin_example) ![GitHub repo size](https://img.shields.io/github/repo-size/Nambers/mirai_kotlin_example) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Nambers/mirai_kotlin_example) ![GitHub last commit](https://img.shields.io/github/last-commit/Nambers/mirai_kotlin_example)
 
-a simple example of mirai using kotlin
+a simple example of mirai using kotlin and java
 
 一个简易的mirai(mirai-console)框架应用 包含kotlin或java版(在 `/src/main/java` 或 `/src/main/kotlin`目录下)
 
