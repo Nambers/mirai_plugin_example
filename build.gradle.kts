@@ -1,8 +1,8 @@
 plugins {
-    val kotlinVersion = "1.4.21"
+    val kotlinVersion = "1.4.30"
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.serialization") version kotlinVersion
-    id("net.mamoe.mirai-console") version "2.3.2"
+    id("net.mamoe.mirai-console") version "2.4.0"
 }
 
 group = "org.example"
@@ -10,19 +10,19 @@ version = "0.1.0"
 
 repositories {
     jcenter()
-    //¹úÄÚ¾µÏñÔ´
-    //»ªÎªÔÆ
+    //å›½å†…é•œåƒæº
+    //åä¸ºäº‘
     maven { url =uri("https://mirrors.huaweicloud.com/repository/maven") }
-    //°¢ÀïÔÆ
+    //é˜¿é‡Œäº‘
     maven { url =uri("https://maven.aliyun.com/nexus/content/repositories/jcenter")}
-    //mirai-consoleµÄ²Ö¿â
+    //mirai-consoleçš„ä»“åº“
     maven {url = uri("https://dl.bintray.com/him188moe/mirai")}
-    //»¬¶¯Ä£¿éµÄ²Ö¿â
+    //æ»‘åŠ¨æ¨¡å—çš„ä»“åº“
     // maven { url = uri("https://dl.bintray.com/karlatemp/misc") }
     mavenLocal()
     mavenCentral()
 }
 dependencies{
-    //ÔÚIDEÄÚÔËĞĞµÄmclÌí¼Ó»¬¿éÄ£¿é£¬Çë²Î¿¼https://github.com/project-mirai/mirai-login-solver-selenium°Ñ°æ±¾¸üĞÂÎª×îĞÂ
+    //åœ¨IDEå†…è¿è¡Œçš„mclæ·»åŠ æ»‘å—æ¨¡å—ï¼Œè¯·å‚è€ƒhttps://github.com/project-mirai/mirai-login-solver-seleniumæŠŠç‰ˆæœ¬æ›´æ–°ä¸ºæœ€æ–°
     //runtimeOnly("net.mamoe:mirai-login-solver-selenium:1.0-dev-15")
 }

@@ -9,13 +9,14 @@ import net.mamoe.mirai.console.terminal.MiraiConsoleTerminalLoader
 suspend fun main() {
     MiraiConsoleTerminalLoader.startAsDaemon()
 
-    //如果是kotlin
-    //PluginMain.load()
-    //PluginMain.enable()
-    //如果是java
-    JavaPluginMain.INSTANCE.load()
-    JavaPluginMain.INSTANCE.enable()
+    //濡傛灉鏄痥otlin
+    PluginMain.load()
+    PluginMain.enable()
+    //濡傛灉鏄痡ava
+//    JavaPluginMain.INSTANCE.load()
+//    JavaPluginMain.INSTANCE.enable()
 
+    //涓嬮潰濉満鍣ㄤ汉淇℃伅
     val bot = MiraiConsole.addBot(qqNum, "password") {
         fileBasedDeviceInfo()
     }.alsoLogin()
