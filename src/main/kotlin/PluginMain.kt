@@ -1,5 +1,6 @@
 package org.example.mirai.plugin
 
+import io.ktor.http.*
 import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescription
 import net.mamoe.mirai.console.plugin.jvm.KotlinPlugin
 import net.mamoe.mirai.event.events.BotInvitedJoinGroupRequestEvent
