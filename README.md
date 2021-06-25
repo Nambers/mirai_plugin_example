@@ -17,6 +17,6 @@ a simple example of mirai using kotlin and java
 
 ![更改地址](https://img-blog.csdnimg.cn/20210120155108568.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwODMyOTYw,size_16,color_FFFFFF,t_70)
 
-c++版(重构完成) <https://github.com/Nambers/MiraiCP>
+c++版(miraicp c++ SDK) <https://github.com/Nambers/MiraiCP>
 
 可直接用idea打开本文件夹来打开项目
