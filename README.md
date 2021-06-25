@@ -5,6 +5,8 @@ a simple example of mirai using kotlin and java
 
 一个简易的mirai(mirai-console)框架应用 包含kotlin或java版(在 `/src/main/java` 或 `/src/main/kotlin`目录下)
 
+> 本例子已通过[pull request](https://github.com/project-mirai/mirai-console-plugin-template/pull/8)同步到官方例子
+
 # 使用方法
 
 ## 1. clone或下载本项目全部东西，可以不用下release
