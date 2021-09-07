@@ -17,7 +17,7 @@ suspend fun main() {
 //    JavaPluginMain.INSTANCE.enable()
 
     //下面填机器人信息
-    val bot = MiraiConsole.addBot(qqNum, "password") {
+    MiraiConsole.addBot(111, "password") {
         fileBasedDeviceInfo()
     }.alsoLogin()
 
