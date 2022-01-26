@@ -1,11 +1,8 @@
 pluginManagement {
     repositories {
-        mavenLocal()
         gradlePluginPortal()
-        mavenCentral()
-        jcenter()
-        maven("https://dl.bintray.com/kotlin/kotlin-eap")
+        maven("https://repo.mirai.mamoe.net/snapshots")
     }
 }
-//这里改生成的插件名称
+//杩欓噷鏀圭敓鎴愮殑鎻掍欢鍚嶇О
 rootProject.name = "mirai-example"
