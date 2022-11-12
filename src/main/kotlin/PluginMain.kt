@@ -2,11 +2,11 @@ package org.example.mirai.plugin
 
 import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescription
 import net.mamoe.mirai.console.plugin.jvm.KotlinPlugin
+import net.mamoe.mirai.event.GlobalEventChannel
 import net.mamoe.mirai.event.events.BotInvitedJoinGroupRequestEvent
 import net.mamoe.mirai.event.events.FriendMessageEvent
 import net.mamoe.mirai.event.events.GroupMessageEvent
 import net.mamoe.mirai.event.events.NewFriendRequestEvent
-import net.mamoe.mirai.event.globalEventChannel
 import net.mamoe.mirai.message.data.Image
 import net.mamoe.mirai.message.data.Image.Key.queryUrl
 import net.mamoe.mirai.message.data.PlainText
@@ -34,8 +34,8 @@ object PluginMain : KotlinPlugin(
     override fun onEnable() {
         logger.info { "Plugin loaded" }
         //配置文件目录 "${dataFolder.absolutePath}/"
-
-        globalEventChannel().subscribeAlways<GroupMessageEvent>{
+        val eventChannel = GlobalEventChannel.parentScope(this)
+        eventChannel.subscribeAlways<GroupMessageEvent> {
             //群消息
             //复读示例
             if (message.contentToString().startsWith("复读")) {
@@ -63,15 +63,15 @@ object PluginMain : KotlinPlugin(
                 }
             }
         }
-        globalEventChannel().subscribeAlways<FriendMessageEvent>{
+        eventChannel.subscribeAlways<FriendMessageEvent> {
             //好友信息
             sender.sendMessage("hi")
         }
-        globalEventChannel().subscribeAlways<NewFriendRequestEvent>{
+        eventChannel.subscribeAlways<NewFriendRequestEvent> {
             //自动同意好友申请
             accept()
         }
-        globalEventChannel().subscribeAlways<BotInvitedJoinGroupRequestEvent>{
+        eventChannel.subscribeAlways<BotInvitedJoinGroupRequestEvent> {
             //自动同意加群申请
             accept()
         }

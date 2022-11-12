@@ -1,8 +1,8 @@
 plugins {
-    val kotlinVersion = "1.5.32"
+    val kotlinVersion = "1.7.20"
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.serialization") version kotlinVersion
-    id("net.mamoe.mirai-console") version "2.10.0-RC2"
+    id("net.mamoe.mirai-console") version "2.13.0-RC2"
 }
 
 group = "org.example"
